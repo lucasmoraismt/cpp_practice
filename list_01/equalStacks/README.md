@@ -12,8 +12,10 @@ The next three lines contain space-separated integers representing the heights o
 ### Output Format
 
 A single integer representing the maximum possible height of all stacks when they are equalized.
-Example
-Input:
+
+### Example
+
+#### Input:
 
 ```
 5 3 4
@@ -22,7 +24,7 @@ Input:
 1 1 4 1
 ```
 
-Output:
+#### Output:
 
 ```
 5
