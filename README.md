@@ -1,24 +1,35 @@
 # Praticando C++
 
-Repositório para armazenar exercícios desenvolvidos durante a disciplina de EDOO (Estrutura de Dados Orientada a Objetos) no CIn - UFPE em 2024.2.
+Repositório para armazenar exercícios desenvolvidos durante a disciplina de **EDOO (Estrutura de Dados Orientada a Objetos)** no **CIn - UFPE** em 2024.2.
 
-## 📌 Objetivo
+## 🎯 Objetivo
 
-Cada lista de exercícios foca em conceitos fundamentais de estruturas de dados e algoritmos.
+Este repositório tem como objetivo consolidar conhecimentos sobre **estruturas de dados e algoritmos**, através da implementação manual de conceitos fundamentais abordados em sala de aula.
 
-### 🔹 Lista 01
+## 📚 Listas de Exercícios
 
-O objetivo desta primeira lista de exercícios foi implementar manualmente classes das seguintes estruturas de dados:
+Cada lista de exercícios foca em um conjunto específico de estruturas de dados e desafios computacionais.
 
-- ✔ Listas encadeadas (simplesmente e duplamente encadeadas)
-- ✔ Pilhas
-- ✔ Filas
+### 🔹 Lista 01 - Estruturas Básicas
+
+O objetivo desta primeira lista foi implementar manualmente classes das seguintes **estruturas de dados**:
+
+- ✔ **Listas encadeadas** (simplesmente e duplamente encadeadas)
+- ✔ **Pilhas**
+- ✔ **Filas**
 
 Cada estrutura foi utilizada na resolução de diferentes desafios de programação.
 
-#### ⚠ Observação: O repositório será atualizado com novas listas de exercícios, cada uma com seus objetivos específicos.
+### 🔹 Lista 02 - Tabelas Hash e Árvores Binárias
 
-### 📂 Estrutura do Repositório
+Nesta lista, foram implementadas **estruturas mais avançadas**, incluindo:
+
+- ✔ **Tabelas Hash** com tratamento de colisão
+- ✔ **Árvores Binárias de Busca (BST)** e seus percursos
+
+⚠ **Observação**: O repositório será atualizado com novas listas de exercícios conforme avançamos na disciplina.
+
+## 📂 Estrutura do Repositório
 
 Os exercícios estão organizados em pastas, conforme a lista de exercícios à qual pertencem:
 
@@ -28,30 +39,38 @@ Os exercícios estão organizados em pastas, conforme a lista de exercícios à 
 │   │-- exerciseName.cpp
 │   │-- input.txt
 │   │-- README.md
+│
+│list_02/
+│-- exerciseName/
+│   │-- exerciseName.cpp
+│   │-- input.txt
+│   │-- README.md
 ```
 
 Cada pasta de exercício contém:
 
-- Um arquivo .cpp com a implementação do desafio.
-- Um arquivo input.txt com um caso de teste de exemplo para rodar a solução.
-- Um arquivo README.md com a descrição do problema.
+- Um arquivo **.cpp** com a implementação do desafio.
+- Um arquivo **input.txt** com um caso de teste de exemplo para rodar a solução.
+- Um arquivo **README.md** com a descrição do problema, formato de entrada/saída e exemplo de uso.
 
-### ▶ Como Rodar os Testes
+## ▶ Como Rodar os Testes
 
-Para testar a solução de um exercício, compile e execute o código redirecionando o arquivo input.txt como entrada:
+Para testar a solução de um exercício, compile e execute o código redirecionando o arquivo **input.txt** como entrada:
 
 ```bash
 cd list_XX/exercicio
 g++ exercicio.cpp -o run && ./run < input.txt
 ```
 
-Por exemplo, para rodar o exercício Tea Queue:
+Por exemplo, para rodar o exercício **Tea Queue**:
 
 ```bash
 cd list_01/teaQueue
 g++ teaQueue.cpp -o run && ./run < input.txt
 ```
 
-### 📌 Expansão do Repositório
+## 🚀 Expansão do Repositório
 
-Novas listas de exercícios serão adicionadas ao longo do curso, cada uma com objetivos e desafios distintos. O README será atualizado para refletir essas novas adições.
+Novas listas de exercícios serão adicionadas ao longo do curso, abrangendo mais estruturas complexas, algoritmos de ordenação e busca, e desafios de programação.
+
+🔄 O **README** será atualizado conforme novas listas forem incluídas.
