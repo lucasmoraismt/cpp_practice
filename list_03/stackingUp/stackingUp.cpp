@@ -1,81 +1,110 @@
 #include <iostream>
-#include <sstream>
-#include <optional>
+#include <variant>
+#include <string>
 
 using namespace std;
 
-struct element {
-  int value = 0;
-  element* previous = nullptr;
+struct Element {
+  variant<int, char> value;
+  Element* previous = nullptr;
 };
 
 class Stack {
 private:
-  element* tip;
+  Element* head;
   int size;
 public:
-  Stack() {
-    tip = nullptr;
-    size = 0;
-  };
+  Stack() : head(nullptr), size(0) {}
   ~Stack() {
-    while(size != 0) {
+    while (head != nullptr) {
       pop();
     }
-  };
+  }
 
-  void push(int value) {
-    element* new_element = new element;
-    new_element->value = value;
-    new_element->previous = tip;
-    tip = new_element;
+  Element* getHead() { return head; }
+  int getSize() { return size; }
+  void push(variant<int, char> value) {
+    Element* newElement = new Element;
+    newElement->value = value;
+    newElement->previous = head;
+    head = newElement;
     size++;
-  };
+  }
   void pop() {
-    if(size > 0) {
-      element* temp = tip;
-      tip = tip->previous;
-      delete temp;
-      size--;
-    } else {
-      tip = nullptr;
-    }
-  };
+    if (size == 0) return;
+    Element* temp = head;
+    head = head->previous;
+    delete temp;
+    size--;
+  }
 };
+
+void incrementStack(Stack &s) {
+  for (Element* current = s.getHead(); current != nullptr; current = current->previous) {
+    current->value = get<int>(current->value) + 1;
+  }
+}
 
 int main() {
-  const Stack pilha;
+  Stack inputStack;
+  Stack commands;
 
-  int instructionsNumber = 0;
-  cin >> instructionsNumber;
+  int intStackElements = 0;
+  cin >> intStackElements;
+  cin.ignore();
 
-  for(int i = 0; i < instructionsNumber; i++){
-    string line;
-    getline(cin, line);
-    stringstream ss(line);
+  for (int i = 0; i < intStackElements; i++) {
+    int currentNumber;
+    cin >> currentNumber;
+    inputStack.push(currentNumber);
+  }
 
-    char instruction;
-    while (ss >> instruction) {
-      if (instruction == '1') {
-        pilha.push(1);
-      } else if (instruction == 'd') {
-        element top = pilha.tip;
-        if (top != nullptr) {
-          pilha.pop();
-          pilha.push(top * 2);
-        }
-      } else if (instruction == '+') {
-        element top = pilha.tip;
+  while (inputStack.getSize() != 0) {
+    //Case 1: If top two numbers are equal, push 'd'.
+    if (inputStack.getSize() >= 2) {
+      int topVal = get<int>(inputStack.getHead()->value);
+      int secondVal = get<int>(inputStack.getHead()->previous->value);
+      if (topVal == secondVal) {
+        commands.push('d');
+        inputStack.pop();
+        continue;
+      }
+    }
 
-        if (top != nullptr && top.previous != nullptr) {
-          int previous = top.previous;
-          pilha.pop();
-          pilha.pop();
-          pilha.push(top.value + previous.value);
-        };
-      };
-    };
-  };
+    int currentVal = get<int>(inputStack.getHead()->value);
+    //Case 2: A lone 1 = push '1'.
+    if (currentVal == 1) {
+      commands.push('1');
+      inputStack.pop();
+      continue;
+    }
+
+    //Case 3: Reverse a plus operation.
+    //First, remove the top element and increment all remaining values.
+    inputStack.pop();
+    incrementStack(inputStack);
+    commands.push('+');
+
+    //For even numbers, assume it was a doubling (push "d+").
+    if (currentVal % 2 == 0) {
+      int half = currentVal / 2;
+      inputStack.push(half);
+      commands.push('d');
+    } else {
+      //Otherwise, reverse the generic plus: push (currentVal - 1) then 1.
+      inputStack.push(currentVal - 1);
+      inputStack.push(1);
+    }
+  }
+
+  string commandString = "";
+  while (commands.getSize() > 0) {
+    char c = get<char>(commands.getHead()->value);
+    commandString += c;
+    commands.pop();
+  }
+
+  cout << commandString << endl;
 
   return 0;
-};
+}
