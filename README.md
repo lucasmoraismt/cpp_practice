@@ -14,7 +14,7 @@ Cada lista de exercícios foca em um conjunto específico de estruturas de dados
 
 O objetivo desta primeira lista foi implementar manualmente classes das seguintes **estruturas de dados**:
 
-- ✔ **Listas encadeadas** (simplesmente e duplamente encadeadas)
+- ✔ **Listas** (simplesmente e duplamente encadeadas)
 - ✔ **Pilhas**
 - ✔ **Filas**
 
@@ -27,13 +27,19 @@ Nesta lista, foram implementadas **estruturas mais avançadas**, incluindo:
 - ✔ **Tabelas Hash** com tratamento de colisão
 - ✔ **Árvores Binárias de Busca (BST)** e seus percursos
 
+### 🔹 Lista 03 - Exercícios avançacos
+
+Nesta lista, foram explorados problemas mais específicos utilizando **hash tables e pilhas**, incluindo:
+
+- ✔ **Otimização de tempo e espaço** através de análises de complexidade
+
 ⚠ **Observação**: O repositório será atualizado com novas listas de exercícios conforme avançamos na disciplina.
 
 ## 📂 Estrutura do Repositório
 
 Os exercícios estão organizados em pastas, conforme a lista de exercícios à qual pertencem:
 
-```
+```txt
 │list_01/
 │-- exerciseName/
 │   │-- exerciseName.cpp
@@ -45,6 +51,9 @@ Os exercícios estão organizados em pastas, conforme a lista de exercícios à 
 │   │-- exerciseName.cpp
 │   │-- input.txt
 │   │-- README.md
+.
+.
+.
 ```
 
 Cada pasta de exercício contém:
