@@ -8,6 +8,8 @@
 *.lo
 *.o
 *.obj
+run
+main
 
 # Precompiled Headers
 *.gch
@@ -32,3 +34,6 @@
 *.exe
 *.out
 *.app
+
+#others
+.cph
