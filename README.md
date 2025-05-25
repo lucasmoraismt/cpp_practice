@@ -1,85 +1,108 @@
 # Praticando C++
 
-Repositório para armazenar exercícios desenvolvidos durante a disciplina de **EDOO (Estrutura de Dados Orientada a Objetos)** no **CIn - UFPE** em 2024.2.
+Bem-vindo ao meu repositório de práticas em C++! Este espaço é dedicado ao armazenamento e documentação dos exercícios de programação desenvolvidos durante minhas disciplinas no **Centro de Informática (CIn) da UFPE**, como **Estrutura de Dados Orientada a Objetos (EDOO)** (cursada em 2024.2) e **Algoritmos** (2025.1).
 
-## 🎯 Objetivo
+## 🎯 Objetivo Principal
 
-Este repositório tem como objetivo consolidar conhecimentos sobre **estruturas de dados e algoritmos**, através da implementação manual de conceitos fundamentais abordados em sala de aula.
+Este repositório tem como finalidade:
 
-## 📚 Listas de Exercícios
+* Consolidar o aprendizado prático em C++.
+* Aprofundar o conhecimento sobre **estruturas de dados**, seus funcionamentos internos e aplicações (foco de EDOO).
+* Desenvolver habilidades no **projeto e análise de algoritmos**, com ênfase em eficiência, complexidade e técnicas de resolução de problemas (foco de Algoritmos).
+* Manter um registro do meu progresso e das soluções implementadas.
 
-Cada lista de exercícios foca em um conjunto específico de estruturas de dados e desafios computacionais.
+## 📚 Disciplinas e Abordagens
 
-### 🔹 Lista 01 - Estruturas Básicas
+O repositório está organizado em seções principais correspondentes às disciplinas, cada uma com suas particularidades e objetivos de aprendizado:
 
-O objetivo desta primeira lista foi implementar manualmente classes das seguintes **estruturas de dados**:
+### 🐘 /edoo (Estrutura de Dados Orientada a Objetos)
 
-- ✔ **Listas** (simplesmente e duplamente encadeadas)
-- ✔ **Pilhas**
-- ✔ **Filas**
+Nesta seção, você encontrará os exercícios da disciplina de EDOO, onde o foco principal é a compreensão profunda e a implementação manual das estruturas de dados fundamentais.
 
-Cada estrutura foi utilizada na resolução de diferentes desafios de programação.
+* **Objetivos de Aprendizagem:**
+  * Implementar manualmente estruturas como listas (simplesmente e duplamente encadeadas), pilhas, filas, tabelas hash (com tratamento de colisão) e árvores binárias de busca (BST), incluindo seus percursos e operações.
+  * Aplicar conceitos de Programação Orientada a Objetos (POO) na modelagem dessas estruturas.
+  * Analisar a complexidade (tempo e espaço) das operações implementadas.
+* **Restrições de Implementação (Disciplina EDOO):**
+  * **Proibido** o uso de containers ou estruturas de dados prontas da Standard Template Library (STL) do C++, como `std::vector`, `std::list`, `std::map`, `std::stack`, `std::queue`, `std::unordered_map`, etc. O objetivo é construir tudo "do zero".
+  * As soluções devem ser implementadas utilizando classes, com devida atenção aos encapsulamentos (campos privados, métodos públicos).
+  * Uso restrito de bibliotecas auxiliares (ex: `<algorithm>` geralmente não é permitido para funções que simplifiquem a lógica central da estrutura de dados).
 
-### 🔹 Lista 02 - Tabelas Hash e Árvores Binárias
+### 🧠 /algoritmos
 
-Nesta lista, foram implementadas **estruturas mais avançadas**, incluindo:
+Esta seção contém os desafios da disciplina de Algoritmos, focada no projeto, eficiência e aplicação de diversas técnicas algorítmicas.
 
-- ✔ **Tabelas Hash** com tratamento de colisão
-- ✔ **Árvores Binárias de Busca (BST)** e seus percursos
-
-### 🔹 Lista 03 - Exercícios avançacos
-
-Nesta lista, foram explorados problemas mais específicos utilizando **hash tables e pilhas**, incluindo:
-
-- ✔ **Otimização de tempo e espaço** através de análises de complexidade
-
-⚠ **Observação**: O repositório será atualizado com novas listas de exercícios conforme avançamos na disciplina.
+* **Objetivos de Aprendizagem:**
+  * Resolver problemas utilizando algoritmos eficientes.
+  * Praticar diferentes paradigmas de algoritmos (ex: divisão e conquista, algoritmos gulosos, programação dinâmica, etc.).
+  * Analisar a complexidade das soluções propostas.
+* **Restrições e Flexibilizações (Disciplina Algoritmos):**
+  * Geralmente, **não é necessário** reimplementar estruturas de dados básicas (como listas dinâmicas) do zero, podendo-se utilizar `std::vector` e outras utilidades da STL.
+  * O uso de bibliotecas padrão do C++ como `<vector>`, `<string>`, `<iostream>`, `<algorithm>` (para funções como `std::min`, `std::max`, `std::abs`, etc.) é **permitido e encorajado**, *exceto* nos casos em que o exercício visa especificamente treinar a implementação manual de um algoritmo que a biblioteca já oferece.
+    * **Exemplo:** Em listas focadas em algoritmos de ordenação (Mergesort, Quicksort) ou busca (Busca Binária), não se deve utilizar `std::sort`, `qsort()`, ou `std::binary_search` diretamente para resolver o núcleo do problema.
+    * No entanto, em um problema sobre, digamos, algoritmos gulosos onde uma ordenação é apenas um passo preliminar, o uso de `std::sort` pode ser aceitável. Sempre verifique o objetivo principal do exercício.
 
 ## 📂 Estrutura do Repositório
 
-Os exercícios estão organizados em pastas, conforme a lista de exercícios à qual pertencem:
+Os exercícios estão organizados da seguinte forma, refletindo a separação por disciplina e, em seguida, por lista de exercícios:
 
 ```txt
-│list_01/
-│-- exerciseName/
-│   │-- exerciseName.cpp
-│   │-- input.txt
-│   │-- README.md
+cpp_practice/
+├── algoritmos/
+│  └── list_XX/            # Ex: list_01, list_02, ...
+│    └── nomeDoDesafio/    # Pasta com o nome do desafio específico
+│      ├── main.cpp        # Código fonte da solução
+│      ├── input.txt       # Exemplo de entrada para testes locais
+│      └── README.md       # Descrição do problema
 │
-│list_02/
-│-- exerciseName/
-│   │-- exerciseName.cpp
-│   │-- input.txt
-│   │-- README.md
-.
-.
-.
+├── edoo/
+│  └── list_XX/            # Ex: list_01, list_02, ...
+│    └── nomeDoDesafio/    # Pasta com o nome do desafio específico
+│      ├── main.cpp        # Código fonte da solução
+│      ├── input.txt       # Exemplo de entrada para testes locais
+│      └── README.md       # Descrição do problema
 ```
 
-Cada pasta de exercício contém:
+Cada pasta de um desafio específico (`nomeDoDesafio/`) idealmente contém:
 
-- Um arquivo **.cpp** com a implementação do desafio.
-- Um arquivo **input.txt** com um caso de teste de exemplo para rodar a solução.
-- Um arquivo **README.md** com a descrição do problema, formato de entrada/saída e exemplo de uso.
+* Um arquivo `main.cpp`: A implementação da solução em C++.
+* Um arquivo `input.txt`: Um exemplo de entrada para facilitar testes locais via redirecionamento de terminal (se aplicável).
+* Um arquivo `README.md`: Contendo o enunciado do problema, formato de entrada/saída e exemplos (pode ser uma cópia do enunciado original do desafio, se o problema for de algum juiz online).
 
 ## ▶ Como Rodar os Testes
 
-Para testar a solução de um exercício, compile e execute o código redirecionando o arquivo **input.txt** como entrada:
+Para compilar e executar a solução de um exercício específico, navegue até a pasta do desafio e utilize os seguintes comandos como exemplo. Assumindo que você tem um compilador C++ como o g++ instalado:
 
-```bash
-cd list_XX/exercicio
-g++ exercicio.cpp -o run && ./run < input.txt
-```
+1. **Navegue até a pasta do desafio:**
 
-Por exemplo, para rodar o exercício **Tea Queue**:
+  ```bash
+  # Exemplo para um desafio de EDOO
+  cd edoo/list_01/NomeDoDesafioEDOO
+  ```
 
-```bash
-cd list_01/teaQueue
-g++ teaQueue.cpp -o run && ./run < input.txt
-```
+  ```bash
+  # Ou para um desafio de Algoritmos
+  cd algoritmos/list_01/NomeDoDesafioAlgoritmos
+  ```
+
+2. **Compile e execute:**
+
+  * Se houver um arquivo `input.txt` para o desafio e o programa lê da entrada padrão:
+
+    ```bash
+    g++ main.cpp -o solucao && ./solucao < input.txt
+    ```
+
+  * Se o programa for interativo ou não usar redirecionamento de arquivo:
+
+    ```bash
+    g++ main.cpp -o solucao && ./solucao
+    ```
+
+  (Substitua `solucao` pelo nome que preferir para o executável).
 
 ## 🚀 Expansão do Repositório
 
-Novas listas de exercícios serão adicionadas ao longo do curso, abrangendo mais estruturas complexas, algoritmos de ordenação e busca, e desafios de programação.
+Novas listas de exercícios e soluções serão adicionadas conforme avanço nas disciplinas e pratico novos desafios.
 
-🔄 O **README** será atualizado conforme novas listas forem incluídas.
+🔄 O `README.md` principal será atualizado conforme necessário para refletir a evolução e organização do repositório.
